@@ -20,7 +20,7 @@
             model.addAttribute("articleList",articleList);
             return "article_list";
         }
-        @GetMapping("value = /detail/{id}")
+        @GetMapping("/detail/{id}")
         public String detail(Model model, @PathVariable("id") Integer id){
             Article article = this.articleService.getArticle(id);
             model.addAttribute("article", article);

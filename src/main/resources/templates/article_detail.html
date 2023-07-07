@@ -7,5 +7,8 @@
 <body>
     <h1 th:text="${article.subject}">제목</h1>
     <div th:text="${article.content}">내용</div>
+    <button>
+        <a th:href="@{/article/list}" style="margin-top: 10px;">목록</a>
+    </button>
 </body>
 </html>
