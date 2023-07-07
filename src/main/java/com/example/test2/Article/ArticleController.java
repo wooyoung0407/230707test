@@ -23,18 +23,23 @@ public class ArticleController {
         model.addAttribute("articleList",articleList);
         return "article_list";
     }
-//    @GetMapping("/detail")
-//    public String detail(Model model, @PathVariable("id") Integer id){
-//        Article article = this.articleService.getArticle(id);
-//        model.addAttribute("article", article);
-//        return "article_detail";
-//    }
-//
-//    @PostMapping("/create/{id}")
-//    public String createArticle(Model model, @PathVariable("id") Integer id, @PathVariable String content){
-//        Article article = this.articleService.getArticle(id);
-//        this.articleService.create(subject,content);
-//        return "redirect:/article/detail/{id}";
-//    }
+    @GetMapping("value = /detail/{id}")
+    public String detail(Model model, @PathVariable("id") Integer id){
+        Article article = this.articleService.getArticle(id);
+        model.addAttribute("article", article);
+        return "article_detail";
+    }
+    @GetMapping("/create")
+    public String create(){
+        return "article_create";
+    }
+
+    @PostMapping("/create/{id}")
+    public String createArticle(Model model, @PathVariable("id") Integer id,
+                                @PathVariable String subject, @PathVariable String content){
+        Article article = this.articleService.getArticle(id);
+        this.articleService.create(subject,content);
+        return "redirect:/article/detail/{id}";
+    }
 
 }
