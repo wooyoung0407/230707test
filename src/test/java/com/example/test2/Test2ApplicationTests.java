@@ -12,5 +12,5 @@ class Test2ApplicationTests {
 
 	@Test//db에 넣기위한 test 작업
 	void testJpa() {
-
+	}
 }
