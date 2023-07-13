@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<nav th:replace="navbar.html"></nav>
+<th:block layout:fragment="content"></th:block>
+<form th:action="@{/user/login}" method="post">
+  <div>
+    <label for="username">사용자ID</label>
+    <input type="text" name="username" id="username">
+  </div>
+  <div>
+    <label for="password">비밀번호</label>
+    <input type="password" name="password" id="password">
+  </div>
+  <button type="submit">로그인</button>
+</form>
+</body>
+</html>

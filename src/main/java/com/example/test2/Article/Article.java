@@ -1,5 +1,6 @@
 package com.example.test2.Article;
 
+import com.example.test2.User.SiteUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,4 +19,7 @@ public class Article {
 
     @Column(columnDefinition = "TEXT")
     private String content;
+
+    @ManyToOne
+    private SiteUser author;
 }

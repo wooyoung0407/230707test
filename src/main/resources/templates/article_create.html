@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <title>article_create</title>
 </head>
 <body>
-<form th:action="@{/article/create}" method="post" style="display: flex; flex-direction: column;">
-    <input type="text" name="subject" id="subject" placeholder="게시글 제목" style="width:200px; margin-bottom: 10px;">
-    <textarea name="content" id="content" rows="15" style="width:200px; margin-bottom: 10px;"></textarea>
-    <input type="submit" value="게시글 등록" style="width:100px;">
-</form>
+<nav th:replace="navbar.html"></nav>
+<div layout:fragment="content">
+    <form th:action="@{/article/create}" method="post" style="display: flex; flex-direction: column;">
+        <input type="text" name="subject" id="subject" placeholder="게시글 제목" style="width:200px; margin-bottom: 10px;">
+        <textarea name="content" id="content" rows="15" style="width:200px; margin-bottom: 10px;"></textarea>
+        <div>
+            <input type="submit" value="게시글 등록" style="width:100px; margin-top: 20px;">
+        </div>
+    </form>
+</div>
 </body>
 </html>
